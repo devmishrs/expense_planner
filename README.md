@@ -1,6 +1,6 @@
 # expense_planner
 
-A new Flutter project.
+This is flutter mobile app to manage daily expense.
 
 ## Getting Started
 
