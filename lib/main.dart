@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import './transactions.dart';
 
 void main() => runApp(MyApp());
@@ -37,13 +38,38 @@ class ExpensePlanner extends StatelessWidget {
         title: Text('Expense Planner'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Container(
             width: double.infinity,
             child: Card(
               child: Text('Hey There!!!'),
               elevation: 10,
+            ),
+          ),
+          Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Title",
+                  ),
+                ),
+                TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelText: 'Spent',
+                  ),
+                ),
+                FlatButton(
+                  child: Text(
+                    'Add Transaction',
+                  ),
+                  onPressed: () {},
+                  textColor: Colors.purple,
+                ),
+              ],
             ),
           ),
           Column(
