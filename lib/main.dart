@@ -20,19 +20,22 @@ class ExpensePlanner extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Expense Planner'),
+        centerTitle: true,
       ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              child: Text('Hey There!!!'),
-              elevation: 10,
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                child: Text('Hey There!!!'),
+                elevation: 10,
+              ),
             ),
-          ),
-          MainTransaction(),
-        ],
+            MainTransaction(),
+          ],
+        ),
       ),
     );
   }

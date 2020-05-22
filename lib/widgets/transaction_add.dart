@@ -7,6 +7,20 @@ class AddTransaction extends StatelessWidget {
 
   AddTransaction(this.add_transaction);
 
+  void submittedData() {
+    final checkTitle = titleController.text;
+    final checkAmount = double.parse(amountController.text).roundToDouble();
+
+    if (checkTitle.isEmpty || checkAmount <= 0) {
+      print("Need to add some dada");
+      return;
+    }
+    add_transaction(
+        titleController.text,
+        // double.parse(amountController.text).roundToDouble(),
+        checkAmount);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -14,6 +28,8 @@ class AddTransaction extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           TextField(
+            textCapitalization: TextCapitalization.words,
+            maxLength: 20,
             decoration: InputDecoration(
               labelText: "Title",
             ),
@@ -25,17 +41,13 @@ class AddTransaction extends StatelessWidget {
               labelText: 'Spent',
             ),
             controller: amountController,
+            onSubmitted: (_) => submittedData(),
           ),
           FlatButton(
             child: Text(
               'Add Transaction',
             ),
-            onPressed: () {
-              add_transaction(
-                titleController.text,
-                double.parse(amountController.text),
-              );
-            },
+            onPressed: () => submittedData(),
             textColor: Colors.purple,
           ),
         ],
