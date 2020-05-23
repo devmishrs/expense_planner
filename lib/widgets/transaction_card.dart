@@ -24,7 +24,8 @@ class TransactionCard extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple,
+                      color:
+                          Theme.of(context).primaryColorLight, //Colors.purple,
                       width: 2,
                     ),
                   ),
@@ -32,7 +33,8 @@ class TransactionCard extends StatelessWidget {
                   child: Text(
                     '₹${transaction[index].amount}',
                     style: TextStyle(
-                      color: Colors.purple[200],
+                      color:
+                          Theme.of(context).primaryColorLight, //.purple[200],
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
