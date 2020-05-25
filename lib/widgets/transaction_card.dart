@@ -14,6 +14,9 @@ class TransactionCard extends StatelessWidget {
         itemCount: transaction.length,
         itemBuilder: (context, index) {
           return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             elevation: 5,
             child: Row(
               children: <Widget>[
@@ -23,9 +26,9 @@ class TransactionCard extends StatelessWidget {
                     vertical: 10,
                   ),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color:
-                          Theme.of(context).primaryColorLight, //Colors.purple,
+                      color: Theme.of(context).primaryColorDark,
                       width: 2,
                     ),
                   ),
@@ -33,8 +36,7 @@ class TransactionCard extends StatelessWidget {
                   child: Text(
                     '₹${transaction[index].amount}',
                     style: TextStyle(
-                      color:
-                          Theme.of(context).primaryColorLight, //.purple[200],
+                      color: Theme.of(context).primaryColorDark, //.purple[200],
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
